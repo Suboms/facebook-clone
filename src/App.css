@@ -1,0 +1,21 @@
+.container {
+  min-height: 640px;
+}
+.fb-content{
+    background-color: rgb(240,242,245);
+    padding-top: 20px;
+    padding-bottom: 80px;
+    min-width: 980px;
+}
+.content{
+/* display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 100%; */
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+  width: 950px;
+  
+}
