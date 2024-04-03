@@ -1,6 +1,10 @@
 import React from "react";
 import InputField from "./Input";
-const RegistrationForm = () => {
+import SelectField from "./Select";
+import PropTypes from "prop-types";
+const RegistrationForm = ({ dateArray, monthArray, yearArray }) => {
+  const d = new Date();
+
   return (
     <>
       <div className="form-container">
@@ -9,14 +13,40 @@ const RegistrationForm = () => {
           <form action="" method="post" className="signup-form">
             <div className="name-row">
               <InputField name="fname" type="text" placeholder="First Name" />
+              <InputField name="lname" type="text" placeholder="Last Name" />
             </div>
 
-            <div className="input-container"></div>
-            <div className="input-container"></div>
+            <div className="input-container">
+              <InputField
+                name="reg-email"
+                type="text"
+                placeholder="Mobile number or email address"
+              />
+            </div>
+            <div className="input-container">
+              <InputField
+                name="password"
+                type="password"
+                placeholder="New Password"
+              />
+            </div>
 
             <div className="dob-row">
-              <div className="input-container"></div>
-              <div className="input-container"></div>
+              <SelectField
+                name="date"
+                options={dateArray}
+                defaultValue={d.getDate().toString()}
+              />
+              <SelectField
+                name="month"
+                options={monthArray}
+                defaultValue={monthArray[d.getMonth()]}
+              />
+              <SelectField
+                name="year"
+                options={yearArray}
+                defaultValue={d.getFullYear().toString()}
+              />
             </div>
 
             <div className="gender-row">
@@ -29,4 +59,9 @@ const RegistrationForm = () => {
     </>
   );
 };
-export default RegistrationForm
+RegistrationForm.propTypes = {
+  dateArray: PropTypes.array.isRequired,
+  monthArray: PropTypes.array.isRequired,
+  yearArray: PropTypes.array.isRequired,
+};
+export default RegistrationForm;

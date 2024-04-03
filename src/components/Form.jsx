@@ -77,6 +77,10 @@ const Form = ({ paraText, advertText, advertEm }) => {
               value={userData.email}
               onChange={handleChange}
               errors={errors}
+              className={{
+                div: `${style["input-container"]}`,
+                input: `${style["form-control"]} `,
+              }}
             />
 
             <InputField
@@ -86,6 +90,10 @@ const Form = ({ paraText, advertText, advertEm }) => {
               value={userData.password}
               onChange={handleChange}
               errors={errors}
+              className={{
+                div: `${style["input-container"]} `,
+                input: `${style["form-control"]} `,
+              }}
             />
 
             <Buttons
@@ -96,7 +104,7 @@ const Form = ({ paraText, advertText, advertEm }) => {
               type="submit"
             />
 
-              <p className={`${style["reset-pword"]}`}>{paraText}</p>
+            <p className={`${style["reset-pword"]}`}>{paraText}</p>
             <div className={style.hr}></div>
             <Buttons
               label="Create Account"
@@ -108,17 +116,17 @@ const Form = ({ paraText, advertText, advertEm }) => {
           </form>
         </div>
         <div className={`${style["advert-cta"]}`}>
-        <p><b>{advertEm}</b> {advertText}</p>
+          <p>
+            <b>{advertEm}</b> {advertText}
+          </p>
+        </div>
       </div>
-      </div>
-
-      
     </>
   );
 };
 Form.propTypes = {
   paraText: PropTypes.string,
   advertEm: PropTypes.string,
-  advertText:PropTypes.string
+  advertText: PropTypes.string,
 };
 export default Form;

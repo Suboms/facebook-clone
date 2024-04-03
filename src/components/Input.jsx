@@ -1,18 +1,20 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import style from "./Form.module.css";
 
-const InputField = ({label, name, placeholder, type, value, onChange, errors}) => {
+const InputField = ({label, name, placeholder, type, value, onChange, errors, className}) => {
+  const{div, labelClass, input} = className || {};
   return (
     <>
-      <div className={`${style["input-container"]}`}>
-        <label htmlFor={name} className={`${style["form-label"]}`}>{label}</label>
+      <div className={div}>
+        <label htmlFor={name} className={labelClass}>{label}</label>
         <input
           type={type}
           name={name}
           id={name}
           placeholder={placeholder}
-          className={`${style["form-control"]} `}
+          className={input}
           onChange={onChange}
           value={value}
         />
@@ -34,6 +36,7 @@ InputField.propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func,
     errors: PropTypes.object,
+    className:PropTypes.object
 }
 
 export default InputField;
