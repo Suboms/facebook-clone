@@ -31,7 +31,7 @@ const InputField = ({label, name, placeholder, type, value, onChange, errors, cl
 InputField.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string.isRequired,
-    placeholder: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
     type: PropTypes.string.isRequired,
     value: PropTypes.string,
     onChange: PropTypes.func,

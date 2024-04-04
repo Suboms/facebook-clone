@@ -25,6 +25,7 @@ function App() {
   ];
   const yearBegin = dateMethod.getFullYear() - 120;
   const yearEnd = dateMethod.getFullYear();
+  const genderType = ["select your pronoun", `She: "Wish her a happy birthday!"`, `He: "Wish him a happy birthday!"`, `They: "Wish them a happy birthday!"`,]
   for (let i = 1; i <= 31; i++) {
     date.push(i);
   }
@@ -54,6 +55,7 @@ function App() {
           return b - a;
         })}
         monthArray={months}
+        genderArray={genderType}
       />
     </>
   );
